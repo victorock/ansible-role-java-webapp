@@ -1,4 +1,4 @@
-Ansible Tower
+Ansible Phillyapp
 =========
 
 Simple Role to Deploy Phillyapp.

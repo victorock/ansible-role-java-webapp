@@ -26,8 +26,7 @@ Dependencies
 The following dependencies are required (`see meta/main.yml`):
 
 ```YAML
-dependencies:
-  - role: victorock.tomcat
+dependencies: []
 ```
 
 Example Playbook

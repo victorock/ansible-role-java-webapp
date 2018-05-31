@@ -1,7 +1,7 @@
-Ansible Phillyapp
+Ansible Tomcat Webapp
 =========
 
-Simple Role to Deploy Phillyapp.
+Simple Role to Deploy in Tomcat an webapp taken from maven repository.
 
 Requirements
 ------------
@@ -12,33 +12,34 @@ Role Variables
 --------------
 
 ```YAML
-phillyapp_version:        "1.0"
-phillyapp_stage:          "release"
-phillyapp_repository_url: "http://artifactory.devops.victorock.io/artifactory/"
-phillyapp_repository:     "{{ phillyapp_repository_url }}/libs-{{ phillyapp_stage }}-local"
-phillyapp_group_id:       "com.phillyair"
-phillyapp_artifact_id:    "phillyapp"
-phillyapp_extension:      "war"
-phillyapp_dir:            "/usr/share/tomcat/webapps/"
+java_webapp_version:        "1.0"
+java_webapp_repository_url: "http://artifactory.devops.victorock.io/artifactory/libs-release-local"
+java_webapp_group_id:       "com.phillyair"
+java_webapp_artifact_id:    "phillyapp"
+java_webapp_extension:      "war"
+java_webapp_dir:            "/usr/share/tomcat/webapps/"
 ```
 
 Dependencies
 ------------
 
-The following dependencies are required:
+The following dependencies are required (`see meta/main.yml`):
 
-None
+```YAML
+dependencies:
+  - role: victorock.tomcat
+```
 
 Example Playbook
 ----------------
 
 ```YAML
-- name: "Deploy Phillyapp"
-  hosts: phillyapp
+- name: "Deploy Tomcat Webapp"
+  hosts: tomcat
   become: true
 
   roles:
-    - victorock.phillyapp
+    - victorock.tomcat-webapp
 ```
 
 License

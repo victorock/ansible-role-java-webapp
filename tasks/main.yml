@@ -1,19 +1,19 @@
 ---
 - name: "Deploy maven artifact"
   maven_artifact:
-    group_id:       "{{ phillyapp_group_id }}"
-    artifact_id:    "{{ phillyapp_artifact_id }}"
-    extension:      "{{ phillyapp_extension }}"
-    repository_url: "{{ phillyapp_repository_url }}"
-    version:        "{{ phillyapp_version }}"
-    dest:           "{{ phillyapp_dir }}/{{ phillyapp_artifact_id }}.{{ phillyapp_extension }}"
+    group_id:       "{{ java_webapp_group_id }}"
+    artifact_id:    "{{ java_webapp_artifact_id }}"
+    extension:      "{{ java_webapp_extension }}"
+    repository_url: "{{ java_webapp_repository_url }}"
+    version:        "{{ java_webapp_version }}"
+    dest:           "{{ java_webapp_dir }}/{{ java_webapp_artifact_id }}.{{ java_webapp_extension }}"
 
-- name: "waiting Playbook"
+- name: "Wait for tomcat to deploy application"
   pause:
     seconds: 10
 
 - name: "GET webpage content from application"
   uri:
-    url: "http://localhost:8080/{{ phillyapp_artifact_id }}/"
+    url: "http://localhost:8080/{{ java_webapp_artifact_id }}/"
     return_content: yes
   register: webpage

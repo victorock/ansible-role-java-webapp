@@ -1,7 +1,7 @@
 ---
-phillyapp_version:        "1.0"
-phillyapp_repository_url: "http://artifactory.devops.victorock.io/artifactory/libs-release-local"
-phillyapp_group_id:       "com.phillyair"
-phillyapp_artifact_id:    "phillyapp"
-phillyapp_extension:      "war"
-phillyapp_dir:            "/usr/share/tomcat/webapps/"
+java_webapp_version:        "1.0"
+java_webapp_repository_url: "http://artifactory.devops.victorock.io/artifactory/libs-release-local"
+java_webapp_group_id:       "com.phillyair"
+java_webapp_artifact_id:    "phillyapp"
+java_webapp_extension:      "war"
+java_webapp_dir:            "/usr/share/tomcat/webapps/"
